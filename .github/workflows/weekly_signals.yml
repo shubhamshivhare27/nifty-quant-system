@@ -13,7 +13,9 @@ jobs:
           python-version: '3.11'
       - run: pip install -r requirements.txt
       - run: python master_list.py
-      - run: python live_signals_weekly.py
+      - run:  |
+          python master_list.py
+          python live_signals_weekly.py
       - env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
